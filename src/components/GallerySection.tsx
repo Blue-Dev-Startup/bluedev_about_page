@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
-import gallery7 from "@/assets/gallery-7.jpg";
-import gallery8 from "@/assets/gallery-8.jpg";
-import gallery9 from "@/assets/gallery-9.jpg";
-import gallery10 from "@/assets/gallery-10.jpg";
-import gallery11 from "@/assets/gallery-11.jpg";
-import gallery12 from "@/assets/gallery-12.jpg";
+import workshop1 from "@/assets/gallery/workshops/workshop1-1.jpg";
+import workshop2 from "@/assets/gallery/workshops/workshop1-2.jpg";
+import workshop3 from "@/assets/gallery/workshops/workshop1-3.jpg";
+import workshop4 from "@/assets/gallery/workshops/workshop1-4.jpg";
+import tsyp from "@/assets/gallery/events/tsyp-finalist.jpg";
+import tn56firstplace from "@/assets/gallery/events/tn56-firstplace.jpg";
+import tn56award from "@/assets/gallery/events/tn56-firstaward.jpg";
+import incubation from "@/assets/gallery/events/incubation-firstplace.jpg";
+import custimize from "@/assets/gallery/demo/custimizable.jpg";
+import coursesvariation from "@/assets/gallery/demo/courses-variety.jpg";
+import ar_experience from "@/assets/gallery/demo/ar-experience.jpg";
+import detailed_info from "@/assets/gallery/demo/detailed-info.jpg";
 
-const categories = ["All", "Team Moments", "Events & Competitions", "Projects & Demos"] as const;
+const categories = ["All", "Workshops", "Events & Competitions", "Projects & Demos"] as const;
 
 type Category = (typeof categories)[number];
 
@@ -26,18 +26,18 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-  { id: 1, src: gallery1, caption: "Team collaboration session", category: "Team Moments" },
-  { id: 2, src: gallery2, caption: "Presenting at IEEE TN56 Challenge", category: "Events & Competitions" },
-  { id: 3, src: gallery3, caption: "Winning moment – 1st Place", category: "Events & Competitions" },
-  { id: 4, src: gallery4, caption: "Draw2Life live demo", category: "Projects & Demos" },
-  { id: 5, src: gallery5, caption: "Behind the scenes development", category: "Team Moments" },
-  { id: 6, src: gallery6, caption: "Brainstorming new AR concepts", category: "Team Moments" },
-  { id: 7, src: gallery7, caption: "Award ceremony – IEEE TN56", category: "Events & Competitions" },
-  { id: 8, src: gallery8, caption: "AR prototype testing", category: "Projects & Demos" },
-  { id: 9, src: gallery9, caption: "Team building day", category: "Team Moments" },
-  { id: 10, src: gallery10, caption: "Project showcase event", category: "Projects & Demos" },
-  { id: 11, src: gallery11, caption: "Hackathon weekend", category: "Events & Competitions" },
-  { id: 12, src: gallery12, caption: "Draw2Life user testing session", category: "Projects & Demos" },
+  { id: 1, src: workshop1, caption: "Workshop with students", category: "Workshops" },
+  { id: 2, src: workshop2, caption: "Interactive presentation", category: "Workshops" },
+  { id: 3, src: workshop3, caption: "Showing off our capabilities", category: "Workshops" },
+  { id: 4, src: workshop4, caption: "Draw2Life live demo", category: "Workshops" },
+  { id: 5, src: tsyp, caption: "TSYP13 Finalists Award", category: "Events & Competitions" },
+  { id: 6, src: tn56firstplace, caption: "TN56 First Place", category: "Events & Competitions" },
+  { id: 7, src: tn56award, caption: "TN56 First Place Award", category: "Events & Competitions" },
+  { id: 8, src: incubation, caption: "Bizerte Incubation Program First Place", category: "Events & Competitions" },
+  { id: 9, src: custimize, caption: "Custimizable Experience", category: "Projects & Demos" },
+  { id: 10, src: coursesvariation, caption: "Diverse Courses Offered", category: "Projects & Demos" },
+  { id: 11, src: ar_experience, caption: "Immersive AR Experience", category: "Projects & Demos" },
+  { id: 12, src: detailed_info, caption: "Environment Aware Interaction", category: "Projects & Demos" },
 ];
 
 const GallerySection = () => {

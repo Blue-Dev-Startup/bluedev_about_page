@@ -1,5 +1,4 @@
-import draw2life from "@/assets/draw2life.jpg";
-import { ArrowRight } from "lucide-react";
+import draw2life from "@/assets/draw2life.png";
 
 const ProjectsSection = () => {
   return (
@@ -31,8 +30,8 @@ const ProjectsSection = () => {
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <h3 className="font-heading text-3xl font-bold mb-4 gradient-text">Draw2Life</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                An AI + AR educational application that transforms user drawings into interactive augmented reality experiences.
-                Empowering creativity, learning, and immersion through cutting-edge technology.
+                An AI + AR educational application that transforms middle and high school book diagrams
+                into interactive augmented reality experiences. Empowering creativity, learning, and immersion through cutting-edge technology.
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {["AI", "AR", "Education", "Creative"].map((tag) => (
@@ -41,35 +40,8 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
-              <a href="#" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
-              </a>
             </div>
           </div>
-        </div>
-
-        {/* Placeholder projects */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {[
-            { title: "Project Alpha", desc: "AI-powered analytics platform for real-time insights.", tags: ["AI", "Analytics"] },
-            { title: "Project Lens", desc: "AR navigation assistant for indoor environments.", tags: ["AR", "Navigation"] },
-            { title: "Project Nexus", desc: "Intelligent automation suite for enterprise workflows.", tags: ["AI", "Automation"] },
-          ].map((p) => (
-            <div key={p.title} className="glass rounded-2xl p-6 group hover:glow transition-all duration-300">
-              <div className="h-32 rounded-xl bg-muted mb-4 flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">Coming Soon</span>
-              </div>
-              <h4 className="font-heading font-semibold text-lg mb-2">{p.title}</h4>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{p.desc}</p>
-              <div className="flex gap-2">
-                {p.tags.map((tag) => (
-                  <span key={tag} className="px-2 py-0.5 rounded-full text-xs bg-muted text-muted-foreground">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
