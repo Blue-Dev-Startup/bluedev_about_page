@@ -4,9 +4,21 @@ import { Github, Facebook, Twitter, Send } from "lucide-react";
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = async (emailData) => {
+    const response = await fetch("https://bluedevcontactformscript-production.up.railway.app/api/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(emailData),
+    });
+    if(!response.ok) {
+      throw new Error("Failed to send email, Error: " + response.statusText);
+    }
+    return await response.json();
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder
+    await sendEmail(form);
     alert("Thanks for reaching out! We'll get back to you soon.");
     setForm({ name: "", email: "", message: "" });
   };
