@@ -5,7 +5,7 @@ const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const sendEmail = async (emailData) => {
-    const response = await fetch("https://bluedevcontactformscript-production.up.railway.app/api/send", {
+    const response = await fetch("https://bluedev-contact-form-script.onrender.com/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(emailData),
