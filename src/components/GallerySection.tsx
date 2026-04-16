@@ -9,12 +9,8 @@ import tsyp from "@/assets/gallery/events/tsyp-finalist.jpg";
 import tn56firstplace from "@/assets/gallery/events/tn56-firstplace.jpg";
 import tn56award from "@/assets/gallery/events/tn56-firstaward.jpg";
 import incubation from "@/assets/gallery/events/incubation-firstplace.jpg";
-import custimize from "@/assets/gallery/demo/custimizable.jpg";
-import coursesvariation from "@/assets/gallery/demo/courses-variety.jpg";
-import ar_experience from "@/assets/gallery/demo/ar-experience.jpg";
-import detailed_info from "@/assets/gallery/demo/detailed-info.jpg";
 
-const categories = ["All", "Workshops", "Events & Competitions", "Projects & Demos"] as const;
+const categories = ["All", "Workshops", "Events & Competitions"] as const;
 
 type Category = (typeof categories)[number];
 
@@ -34,10 +30,6 @@ const galleryImages: GalleryImage[] = [
   { id: 6, src: tn56firstplace, caption: "TN56 First Place", category: "Events & Competitions" },
   { id: 7, src: tn56award, caption: "TN56 First Place Award", category: "Events & Competitions" },
   { id: 8, src: incubation, caption: "Bizerte Incubation Program First Place", category: "Events & Competitions" },
-  { id: 9, src: custimize, caption: "Custimizable Experience", category: "Projects & Demos" },
-  { id: 10, src: coursesvariation, caption: "Diverse Courses Offered", category: "Projects & Demos" },
-  { id: 11, src: ar_experience, caption: "Immersive AR Experience", category: "Projects & Demos" },
-  { id: 12, src: detailed_info, caption: "Environment Aware Interaction", category: "Projects & Demos" },
 ];
 
 const GallerySection = () => {
