@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "About", href: "#about" },
   { label: "Team", href: "#team" },
-  /* { label: "Achievements", href: "#achievements" }, */
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
