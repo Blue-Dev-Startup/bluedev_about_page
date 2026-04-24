@@ -1,8 +1,36 @@
-import { useState } from "react";
-import { Github, Facebook, Twitter, Send } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Github, Facebook, Youtube, Instagram, Send } from "lucide-react";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsLight(document.documentElement.classList.contains("light"));
+    };
+
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const SOCIALS = [
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61586931833819",
+      label: "Facebook", darkModeHover: "hover:text-blue-600", lightModeHover: "hover:text-blue-700" },
+    { icon: Instagram, href: "https://www.instagram.com/bluedev2026",
+      label: "Instagram", darkModeHover: "hover:text-pink-500", lightModeHover: "hover:text-pink-700" },
+    { icon: Youtube, href: "https://www.youtube.com/@BlueDev2026",
+      label: "YouTube", darkModeHover: "hover:text-red-500", lightModeHover: "hover:text-red-600" },
+    { icon: Github, href: "https://github.com/Blue-Dev-Startup",
+      label: "GitHub", darkModeHover: "hover:text-white", lightModeHover: "hover:text-black" },
+  ];
 
   const sendEmail = async (emailData) => {
     const response = await fetch("https://bluedev-contact-form-script.vercel.app/send", {
@@ -10,7 +38,7 @@ const ContactSection = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(emailData),
     });
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error("Failed to send email, Error: " + response.statusText);
     }
     return await response.json();
@@ -34,7 +62,7 @@ const ContactSection = () => {
             <p className="text-muted-foreground text-lg">Give us a feedback and don't forget to check our socials!</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 md:p-12 space-y-6">
+          <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 md:p-12 space-y-6 hover:glow transition-all">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
               <input
@@ -80,16 +108,13 @@ const ContactSection = () => {
           </form>
 
           <div className="flex justify-center gap-6 mt-8">
-            {[
-              { icon: Twitter, href: "#", label: "Twitter" },
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Facebook, href: "#", label: "Facebook" },
-            ].map((s) => (
+            {SOCIALS.map((s) => (
               <a
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
-                className="w-12 h-12 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:glow transition-all"
+                target="_blank"
+                className={`w-12 h-12 rounded-full glass flex items-center justify-center text-muted-foreground ${isLight ? s.lightModeHover : s.darkModeHover} hover:glow transition-all`}
               >
                 <s.icon className="w-5 h-5" />
               </a>

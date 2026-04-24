@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-secondary/10 blur-[120px] animate-float" style={{ animationDelay: "1.5s" }} />
 
       <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="inline-block mb-6 px-4 py-2 rounded-full glass text-sm text-muted-foreground">
+        <div className="inline-block mb-6 px-4 py-2 rounded-full glass text-sm text-muted-foreground mt-10 md:mt-0">
           🚀 AI & AR Innovation Studio
         </div>
         <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
@@ -42,7 +42,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce invisible lg:visible">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
           <div className="w-1.5 h-3 rounded-full bg-primary" />
         </div>
